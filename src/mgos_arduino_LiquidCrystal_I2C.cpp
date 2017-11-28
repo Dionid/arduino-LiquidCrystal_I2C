@@ -9,6 +9,7 @@ void mgos_LiquidCrystal_I2C_begin(LiquidCrystal_I2C* lcd, uint8_t cols, uint8_t 
   return lcd->begin(cols, rows, charsize);
 }
 
+
 void mgos_LiquidCrystal_I2C_init(LiquidCrystal_I2C* lcd){
   if (lcd == nullptr) return;
   return lcd->init();
