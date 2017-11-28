@@ -3,7 +3,7 @@
 #define LiquidCrystal_I2C_h
 
 #include <inttypes.h>
-#include "Print.h" 
+#include "Print.h"
 #include <Wire.h>
 
 // commands
@@ -48,9 +48,9 @@
 #define LCD_BACKLIGHT 0x08
 #define LCD_NOBACKLIGHT 0x00
 
-#define En B00000100  // Enable bit
-#define Rw B00000010  // Read/Write bit
-#define Rs B00000001  // Register select bit
+#define En 4  // Enable bit
+#define Rw 2  // Read/Write bit
+#define Rs 1  // Register select bit
 
 class LiquidCrystal_I2C : public Print {
 public:
@@ -75,9 +75,9 @@ public:
   void noBacklight();
   void backlight();
   void autoscroll();
-  void noAutoscroll(); 
+  void noAutoscroll();
   void createChar(uint8_t, uint8_t[]);
-  void setCursor(uint8_t, uint8_t); 
+  void setCursor(uint8_t, uint8_t);
 #if defined(ARDUINO) && ARDUINO >= 100
   virtual size_t write(uint8_t);
 #else
@@ -105,7 +105,7 @@ void off();
 uint8_t init_bargraph(uint8_t graphtype);
 void draw_horizontal_graph(uint8_t row, uint8_t column, uint8_t len,  uint8_t pixel_col_end);
 void draw_vertical_graph(uint8_t row, uint8_t column, uint8_t len,  uint8_t pixel_col_end);
-	 
+
 
 private:
   void init_priv();
@@ -118,6 +118,7 @@ private:
   uint8_t _displaycontrol;
   uint8_t _displaymode;
   uint8_t _numlines;
+  uint8_t _numcols;
   uint8_t _cols;
   uint8_t _rows;
   uint8_t _backlightval;

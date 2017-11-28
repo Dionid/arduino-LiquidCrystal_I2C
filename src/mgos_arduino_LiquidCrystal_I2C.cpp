@@ -29,7 +29,7 @@ void mgos_LiquidCrystal_I2C_setCursor(LiquidCrystal_I2C* lcd, uint8_t col, uint8
   return lcd->setCursor(col, row);
 }
 
-void mgos_LiquidCrystal_I2C_print(LiquidCrystal_I2C* lcd){
+void mgos_LiquidCrystal_I2C_printstr(LiquidCrystal_I2C* lcd, const char c[]){
   if (lcd == nullptr) return;
-  return lcd->print();
+  return lcd->printstr(c);
 }

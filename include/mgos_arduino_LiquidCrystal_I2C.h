@@ -4,7 +4,7 @@
  */
 #ifndef _MGOS_ARDUINO_LIQUID_CRYSTAL_I2C_H_
 #define _MGOS_ARDUINO_LIQUID_CRYSTAL_I2C_H_
- 
+
 #include "Wire.h"
 
 #ifdef __cplusplus
@@ -33,7 +33,7 @@ void mgos_LiquidCrystal_I2C_home(LiquidCrystal_I2C* lcd);
 
 void mgos_LiquidCrystal_I2C_setCursor(LiquidCrystal_I2C* lcd, uint8_t, uint8_t);
 
-void mgos_LiquidCrystal_I2C_print(LiquidCrystal_I2C* lcd);
+void mgos_LiquidCrystal_I2C_printstr(LiquidCrystal_I2C* lcd, const char c[]);
 
 
 #ifdef __cplusplus
