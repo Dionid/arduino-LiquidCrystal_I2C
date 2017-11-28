@@ -1,5 +1,5 @@
 author: Dionid
-description: Arduino DallasTemperature library
+description: Arduino LiquidCrystal_I2C library
 type: lib
 
 version: 1.0
