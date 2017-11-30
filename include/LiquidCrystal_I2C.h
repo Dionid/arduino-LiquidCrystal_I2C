@@ -5,6 +5,7 @@
 #include <inttypes.h>
 #include "Print.h"
 #include <Wire.h>
+#include <binary.h>
 
 // commands
 #define LCD_CLEARDISPLAY 0x01
@@ -48,9 +49,9 @@
 #define LCD_BACKLIGHT 0x08
 #define LCD_NOBACKLIGHT 0x00
 
-#define En 4  // Enable bit
-#define Rw 2  // Read/Write bit
-#define Rs 1  // Register select bit
+#define En B00000100  // Enable bit
+#define Rw B00000010  // Read/Write bit
+#define Rs B00000001  // Register select bit
 
 class LiquidCrystal_I2C : public Print {
 public:
@@ -73,6 +74,7 @@ public:
   void shiftIncrement();
   void shiftDecrement();
   void noBacklight();
+  uint8_t getAddr();
   void backlight();
   void autoscroll();
   void noAutoscroll();
@@ -118,7 +120,6 @@ private:
   uint8_t _displaycontrol;
   uint8_t _displaymode;
   uint8_t _numlines;
-  uint8_t _numcols;
   uint8_t _cols;
   uint8_t _rows;
   uint8_t _backlightval;

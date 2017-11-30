@@ -68,7 +68,6 @@ void LiquidCrystal_I2C::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
 		_displayfunction |= LCD_2LINE;
 	}
 	_numlines = lines;
-	_numcols = cols;
 
 	// for some 1 line displays you can select a 10 pixel high font
 	if ((dotsize != 0) && (lines == 1)) {
@@ -215,7 +214,10 @@ void LiquidCrystal_I2C::createChar(uint8_t location, uint8_t charmap[]) {
 	}
 }
 
-// Turn the (optional) backlight off/on
+uint8_t LiquidCrystal_I2C::getAddr(void) {
+	return _Addr;
+}
+
 void LiquidCrystal_I2C::noBacklight(void) {
 	_backlightval=LCD_NOBACKLIGHT;
 	expanderWrite(0);
@@ -251,7 +253,7 @@ void LiquidCrystal_I2C::write4bits(uint8_t value) {
 }
 
 void LiquidCrystal_I2C::expanderWrite(uint8_t _data){
-	Wire.beginTransmission(_Addr);
+	Wire.beginTransmission(0x3F);
 	printIIC((int)(_data) | _backlightval);
 	Wire.endTransmission();
 }
@@ -305,10 +307,10 @@ void LiquidCrystal_I2C::printstr(const char c[]){
 // unsupported API functions
 void LiquidCrystal_I2C::off(){}
 void LiquidCrystal_I2C::on(){}
-// void LiquidCrystal_I2C::setDelay (int cmdDelay,int charDelay) {}
+void LiquidCrystal_I2C::setDelay (int cmdDelay,int charDelay) {}
 uint8_t LiquidCrystal_I2C::status(){return 0;}
 uint8_t LiquidCrystal_I2C::keypad (){return 0;}
-// uint8_t LiquidCrystal_I2C::init_bargraph(uint8_t graphtype){return 0;}
-// void LiquidCrystal_I2C::draw_horizontal_graph(uint8_t row, uint8_t column, uint8_t len,  uint8_t pixel_col_end){}
-// void LiquidCrystal_I2C::draw_vertical_graph(uint8_t row, uint8_t column, uint8_t len,  uint8_t pixel_row_end){}
-// void LiquidCrystal_I2C::setContrast(uint8_t new_val){}
+uint8_t LiquidCrystal_I2C::init_bargraph(uint8_t graphtype){return 0;}
+void LiquidCrystal_I2C::draw_horizontal_graph(uint8_t row, uint8_t column, uint8_t len,  uint8_t pixel_col_end){}
+void LiquidCrystal_I2C::draw_vertical_graph(uint8_t row, uint8_t column, uint8_t len,  uint8_t pixel_row_end){}
+void LiquidCrystal_I2C::setContrast(uint8_t new_val){}

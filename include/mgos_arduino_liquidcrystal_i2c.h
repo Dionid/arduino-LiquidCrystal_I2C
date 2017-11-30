@@ -21,23 +21,25 @@ extern "C"
 /*
  * Create an LiquidCrystal_I2C instance, with the given I2C address.
  */
-// LiquidCrystal_I2C* mgos_liquidcrystal_i2c_create(uint8_t lcd_Addr,uint8_t lcd_cols,uint8_t lcd_rows);
-//
-// void mgos_liquidcrystal_i2c_begin(LiquidCrystal_I2C* lcd, uint8_t cols, uint8_t rows, uint8_t charsize = LCD_5x8DOTS );
-//
-// void mgos_liquidcrystal_i2c_close(LiquidCrystal_I2C* lcd);
-//
-// void mgos_liquidcrystal_i2c_init(LiquidCrystal_I2C* lcd);
-//
-// void mgos_liquidcrystal_i2c_backlight(LiquidCrystal_I2C* lcd);
-//
-// void mgos_liquidcrystal_i2c_clear(LiquidCrystal_I2C* lcd);
-//
-// void mgos_liquidcrystal_i2c_home(LiquidCrystal_I2C* lcd);
-//
+LiquidCrystal_I2C* mgos_liquidcrystal_i2c_create(uint8_t lcd_Addr,uint8_t lcd_cols,uint8_t lcd_rows);
+
+void mgos_liquidcrystal_i2c_close(LiquidCrystal_I2C* lcd);
+
+void mgos_liquidcrystal_i2c_init(LiquidCrystal_I2C* lcd);
+
+void mgos_liquidcrystal_i2c_backlight(LiquidCrystal_I2C* lcd);
+
+void mgos_liquidcrystal_i2c_noBacklight(LiquidCrystal_I2C* lcd);
+
+uint8_t mgos_liquidcrystal_i2c_getAddr(LiquidCrystal_I2C* lcd);
+
 // void mgos_liquidcrystal_i2c_setCursor(LiquidCrystal_I2C* lcd, uint8_t, uint8_t);
 //
-// void mgos_liquidcrystal_i2c_printstr(LiquidCrystal_I2C* lcd, const char c[]);
+// size_t mgos_liquidcrystal_i2c_print(LiquidCrystal_I2C* lcd, const String &);
+//
+// size_t mgos_liquidcrystal_i2c_print(LiquidCrystal_I2C* lcd, const char[]);
+//
+// size_t mgos_liquidcrystal_i2c_print(LiquidCrystal_I2C* lcd, char);
 
 
 #ifdef __cplusplus
