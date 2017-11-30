@@ -10,6 +10,9 @@ sources:
 includes:
   - include
 
+cxxflags:
+  - "-Wno-unused-parameter"
+
 libs:
   - origin: https://github.com/mongoose-os-libs/arduino-compat
   - origin: https://github.com/mongoose-os-libs/arduino-wire

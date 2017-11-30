@@ -5,9 +5,8 @@
 #ifndef _MGOS_ARDUINO_LIQUID_CRYSTAL_I2C_H_
 #define _MGOS_ARDUINO_LIQUID_CRYSTAL_I2C_H_
 
-#include "Wire.h"
-
 #ifdef __cplusplus
+#include "Wire.h"
 #include "LiquidCrystal_I2C.h"
 #else
 typedef struct LiquidCrystal_I2CTag LiquidCrystal_I2C;
