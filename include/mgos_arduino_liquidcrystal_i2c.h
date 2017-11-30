@@ -28,7 +28,7 @@ void mgos_liquidcrystal_i2c_init(LiquidCrystal_I2C* lcd);
 
 void mgos_liquidcrystal_i2c_backlight(LiquidCrystal_I2C* lcd);
 
-void mgos_liquidcrystal_i2c_noBacklight(LiquidCrystal_I2C* lcd);
+bool mgos_liquidcrystal_i2c_noBacklight(LiquidCrystal_I2C* lcd);
 
 uint8_t mgos_liquidcrystal_i2c_getAddr(LiquidCrystal_I2C* lcd);
 
