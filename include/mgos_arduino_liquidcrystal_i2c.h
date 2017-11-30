@@ -57,7 +57,7 @@ void mgos_liquidcrystal_i2c_noBacklight(LiquidCrystal_I2C* lcd);
 void mgos_liquidcrystal_i2c_autoscroll(LiquidCrystal_I2C* lcd);
 void mgos_liquidcrystal_i2c_noAutoscroll(LiquidCrystal_I2C* lcd);
 
-void mgos_liquidcrystal_i2c_createChar(LiquidCrystal_I2C* lcd, uint8_t, uint8_t);
+void mgos_liquidcrystal_i2c_createChar(LiquidCrystal_I2C* lcd, uint8_t, uint8_t[]);
 size_t mgos_liquidcrystal_i2c_write(LiquidCrystal_I2C* lcd, uint8_t);
 void mgos_liquidcrystal_i2c_command(LiquidCrystal_I2C* lcd, uint8_t);
 
