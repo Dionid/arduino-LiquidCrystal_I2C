@@ -6,7 +6,6 @@
 #define _MGOS_ARDUINO_LIQUID_CRYSTAL_I2C_H_
 
 #ifdef __cplusplus
-#include "Wire.h"
 #include "LiquidCrystal_I2C.h"
 #else
 typedef struct LiquidCrystal_I2CTag LiquidCrystal_I2C;
@@ -28,17 +27,17 @@ void mgos_liquidcrystal_i2c_init(LiquidCrystal_I2C* lcd);
 
 void mgos_liquidcrystal_i2c_backlight(LiquidCrystal_I2C* lcd);
 
-bool mgos_liquidcrystal_i2c_noBacklight(LiquidCrystal_I2C* lcd);
+void mgos_liquidcrystal_i2c_noBacklight(LiquidCrystal_I2C* lcd);
 
 uint8_t mgos_liquidcrystal_i2c_getAddr(LiquidCrystal_I2C* lcd);
 
-// void mgos_liquidcrystal_i2c_setCursor(LiquidCrystal_I2C* lcd, uint8_t, uint8_t);
-//
+void mgos_liquidcrystal_i2c_setCursor(LiquidCrystal_I2C* lcd, uint8_t col, uint8_t row);
+
 // size_t mgos_liquidcrystal_i2c_print(LiquidCrystal_I2C* lcd, const String &);
-//
-// size_t mgos_liquidcrystal_i2c_print(LiquidCrystal_I2C* lcd, const char[]);
-//
-// size_t mgos_liquidcrystal_i2c_print(LiquidCrystal_I2C* lcd, char);
+
+size_t mgos_liquidcrystal_i2c_print(LiquidCrystal_I2C* lcd, const char str[]);
+
+size_t mgos_liquidcrystal_i2c_printChar(LiquidCrystal_I2C* lcd, char c);
 
 
 #ifdef __cplusplus

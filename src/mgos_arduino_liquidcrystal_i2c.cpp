@@ -21,15 +21,33 @@ void mgos_liquidcrystal_i2c_backlight(LiquidCrystal_I2C* lcd) {
   return lcd->backlight();
 }
 
-bool mgos_liquidcrystal_i2c_noBacklight(LiquidCrystal_I2C* lcd) {
-  if (lcd == nullptr) return false;
-  lcd->noBacklight();
-  return true;
+void mgos_liquidcrystal_i2c_noBacklight(LiquidCrystal_I2C* lcd) {
+  if (lcd == nullptr) return;
+  return lcd->noBacklight();
 }
 
 uint8_t mgos_liquidcrystal_i2c_getAddr(LiquidCrystal_I2C* lcd) {
   if (lcd == nullptr) return 0;
   return lcd->getAddr();
+}
+
+void mgos_liquidcrystal_i2c_setCursor(LiquidCrystal_I2C* lcd, uint8_t col, uint8_t row){
+  if (lcd == nullptr) return;
+  return lcd->setCursor(col, row);
+}
+
+// size_t mgos_liquidcrystal_i2c_print(LiquidCrystal_I2C* lcd, const String &) {
+//
+// }
+
+size_t mgos_liquidcrystal_i2c_print(LiquidCrystal_I2C* lcd, const char str[]) {
+  if (lcd == nullptr) return 0;
+  return lcd->print(str);
+}
+
+size_t mgos_liquidcrystal_i2c_printChar(LiquidCrystal_I2C* lcd, char c) {
+  if (lcd == nullptr) return 0;
+  return lcd->print(c);
 }
 
 //
