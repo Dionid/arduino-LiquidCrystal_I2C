@@ -33,7 +33,7 @@ int mgos_liquidcrystal_i2c_getAddr(LiquidCrystal_I2C* lcd);
 
 void mgos_liquidcrystal_i2c_setCursor(LiquidCrystal_I2C* lcd, int col, int row);
 
-int mgos_liquidcrystal_i2c_print(LiquidCrystal_I2C* lcd, const char *str[]);
+int mgos_liquidcrystal_i2c_print(LiquidCrystal_I2C* lcd, const char *str);
 
 int mgos_liquidcrystal_i2c_printChar(LiquidCrystal_I2C* lcd, char *c);
 
