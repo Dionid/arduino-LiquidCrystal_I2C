@@ -1,15 +1,15 @@
 
 
 let LiquidCrystalI2C = {
-  _create: ffi('void *mgos_liquidcrystal_i2c_create(uint8_t, uint8_t, uint8_t)'),
+  _create: ffi('void *mgos_liquidcrystal_i2c_create(int, int, int)'),
   _close: ffi('void mgos_liquidcrystal_i2c_close(void *)'),
   _init: ffi('void mgos_liquidcrystal_i2c_init(void *)'),
   _backlight: ffi('void mgos_liquidcrystal_i2c_backlight(void *)'),
   _noBacklight: ffi('void mgos_liquidcrystal_i2c_noBacklight(void *)'),
-  _getAddr: ffi('uint8_t mgos_liquidcrystal_i2c_getAddr(void *)'),
-  _setCursor: ffi('void mgos_liquidcrystal_i2c_setCursor(void *, uint8_t, uint8_t)'),
-  _print: ffi('size_t mgos_liquidcrystal_i2c_print(void *, const char str[])'),
-  _printChar: ffi('size_t mgos_liquidcrystal_i2c_printChar(void *, char c)'),
+  _getAddr: ffi('int mgos_liquidcrystal_i2c_getAddr(void *)'),
+  _setCursor: ffi('void mgos_liquidcrystal_i2c_setCursor(void *, int, int)'),
+  _print: ffi('size_t mgos_liquidcrystal_i2c_print(void *, char *)'),
+  _printChar: ffi('size_t mgos_liquidcrystal_i2c_printChar(void *, char *)'),
   _clear: ffi('void mgos_liquidcrystal_i2c_clear(void *)'),
   _home: ffi('void mgos_liquidcrystal_i2c_home(void *)'),
   _noDisplay: ffi('void mgos_liquidcrystal_i2c_noDisplay(void *)'),
@@ -29,7 +29,33 @@ let LiquidCrystalI2C = {
   _noBacklight: ffi('void mgos_liquidcrystal_i2c_noBacklight(void *)'),
   _autoscroll: ffi('void mgos_liquidcrystal_i2c_autoscroll(void *)'),
   _noAutoscroll: ffi('void mgos_liquidcrystal_i2c_noAutoscroll(void *)'),
-  _createChar: ffi('void mgos_liquidcrystal_i2c_createChar(void *, uint8_t, uint8_t[])'),
-  _write: ffi('size_t mgos_liquidcrystal_i2c_write(void *, uint8_t)'),
-  _command: ffi('void mgos_liquidcrystal_i2c_command(void *, uint8_t)'),
+  // _createChar: ffi('void mgos_liquidcrystal_i2c_createChar(void *, int, int[])'),
+  _write: ffi('size_t mgos_liquidcrystal_i2c_write(void *, int)'),
+  _command: ffi('void mgos_liquidcrystal_i2c_command(void *, int)'),
+
+  create: function(lcd_Addr, lcd_cols, lcd_rows) {
+    let obj = Object.create(LiquidCrystalI2C._proto);
+    // Initialize DallasTemperature library.
+    // Return value: handle opaque pointer.
+    obj.lcd = LiquidCrystalI2C._create(lcd_Addr, lcd_cols, lcd_rows);
+    return obj;
+  },
+
+  _proto: {
+    close: function() {
+      return LiquidCrystalI2C._close(this.lcd);
+    },
+
+    init: function() {
+      return LiquidCrystalI2C._init(this.lcd);
+    },
+
+    backlight: function() {
+      return LiquidCrystalI2C._backlight(this.lcd);
+    },
+
+    noBacklight: function() {
+      return LiquidCrystalI2C._noBacklight(this.lcd);
+    },
+  }
 }
