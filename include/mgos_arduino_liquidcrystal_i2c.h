@@ -33,7 +33,7 @@ int mgos_liquidcrystal_i2c_getAddr(LiquidCrystal_I2C* lcd);
 
 void mgos_liquidcrystal_i2c_setCursor(LiquidCrystal_I2C* lcd, int col, int row);
 
-// int mgos_liquidcrystal_i2c_print(LiquidCrystal_I2C* lcd, const char *str);
+int mgos_liquidcrystal_i2c_print(LiquidCrystal_I2C* lcd, const char *str);
 // int mgos_liquidcrystal_i2c_printChar(LiquidCrystal_I2C* lcd, char *c);
 
 void mgos_liquidcrystal_i2c_clear(LiquidCrystal_I2C* lcd);
@@ -48,10 +48,10 @@ void mgos_liquidcrystal_i2c_scrollDisplayLeft(LiquidCrystal_I2C* lcd);
 void mgos_liquidcrystal_i2c_scrollDisplayRight(LiquidCrystal_I2C* lcd);
 // void mgos_liquidcrystal_i2c_printLeft(LiquidCrystal_I2C* lcd);
 // void mgos_liquidcrystal_i2c_printRight(LiquidCrystal_I2C* lcd);
-void mgos_liquidcrystal_i2c_leftToRight(LiquidCrystal_I2C* lcd);
-void mgos_liquidcrystal_i2c_rightToLeft(LiquidCrystal_I2C* lcd);
 // void mgos_liquidcrystal_i2c_shiftIncrement(LiquidCrystal_I2C* lcd);
 // void mgos_liquidcrystal_i2c_shiftDecrement(LiquidCrystal_I2C* lcd);
+void mgos_liquidcrystal_i2c_leftToRight(LiquidCrystal_I2C* lcd);
+void mgos_liquidcrystal_i2c_rightToLeft(LiquidCrystal_I2C* lcd);
 void mgos_liquidcrystal_i2c_noBacklight(LiquidCrystal_I2C* lcd);
 void mgos_liquidcrystal_i2c_autoscroll(LiquidCrystal_I2C* lcd);
 void mgos_liquidcrystal_i2c_noAutoscroll(LiquidCrystal_I2C* lcd);
