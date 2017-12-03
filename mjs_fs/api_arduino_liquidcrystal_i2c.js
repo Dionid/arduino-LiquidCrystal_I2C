@@ -48,6 +48,10 @@ let LiquidCrystalI2C = {
       return LiquidCrystalI2C._init(this.lcd);
     },
 
+    print: function(str) {
+      return LiquidCrystalI2C._print(str);
+    },
+
     backlight: function() {
       return LiquidCrystalI2C._backlight(this.lcd);
     },
