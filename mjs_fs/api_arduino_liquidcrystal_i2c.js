@@ -49,7 +49,7 @@ let LiquidCrystalI2C = {
 
     setCursor: function(row, col) {
       return LiquidCrystalI2C._setCursor(this.lcd, row, col);
-    }
+    },
 
     backlight: function() {
       return LiquidCrystalI2C._backlight(this.lcd);
