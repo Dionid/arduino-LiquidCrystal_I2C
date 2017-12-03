@@ -41,7 +41,7 @@ int mgos_liquidcrystal_i2c_print(LiquidCrystal_I2C* lcd, const char *str) {
   return lcd->print(str);
 }
 
-int mgos_liquidcrystal_i2c_printChar(LiquidCrystal_I2C* lcd, char *c) {
+int mgos_liquidcrystal_i2c_printChar(LiquidCrystal_I2C* lcd, const char *c) {
   if (lcd == nullptr) return 0;
   return lcd->print(c);
 }
