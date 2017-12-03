@@ -27,7 +27,6 @@ let LiquidCrystalI2C = {
   // _shiftDecrement: ffi('void mgos_liquidcrystal_i2c_shiftDecrement(void *)'),
   _leftToRight: ffi('void mgos_liquidcrystal_i2c_leftToRight(void *)'),
   _rightToLeft: ffi('void mgos_liquidcrystal_i2c_rightToLeft(void *)'),
-  _noBacklight: ffi('void mgos_liquidcrystal_i2c_noBacklight(void *)'),
   _autoscroll: ffi('void mgos_liquidcrystal_i2c_autoscroll(void *)'),
   _noAutoscroll: ffi('void mgos_liquidcrystal_i2c_noAutoscroll(void *)'),
   // _createChar: ffi('void mgos_liquidcrystal_i2c_createChar(void *, int, int[])'),
