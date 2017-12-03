@@ -96,25 +96,25 @@ void mgos_liquidcrystal_i2c_scrollDisplayRight(LiquidCrystal_I2C* lcd) {
   return lcd->scrollDisplayRight();
 }
 
-void mgos_liquidcrystal_i2c_printLeft(LiquidCrystal_I2C* lcd) {
-  if (lcd == nullptr) return;
-  return lcd->printLeft();
-}
-
-void mgos_liquidcrystal_i2c_printRight(LiquidCrystal_I2C* lcd) {
-  if (lcd == nullptr) return;
-  return lcd->printRight();
-}
-
-void mgos_liquidcrystal_i2c_shiftIncrement(LiquidCrystal_I2C* lcd) {
-  if (lcd == nullptr) return;
-  return lcd->shiftIncrement();
-}
-
-void mgos_liquidcrystal_i2c_shiftDecrement(LiquidCrystal_I2C* lcd) {
-  if (lcd == nullptr) return;
-  return lcd->shiftDecrement();
-}
+// void mgos_liquidcrystal_i2c_printLeft(LiquidCrystal_I2C* lcd) {
+//   if (lcd == nullptr) return;
+//   return lcd->printLeft();
+// }
+//
+// void mgos_liquidcrystal_i2c_printRight(LiquidCrystal_I2C* lcd) {
+//   if (lcd == nullptr) return;
+//   return lcd->printRight();
+// }
+//
+// void mgos_liquidcrystal_i2c_shiftIncrement(LiquidCrystal_I2C* lcd) {
+//   if (lcd == nullptr) return;
+//   return lcd->shiftIncrement();
+// }
+//
+// void mgos_liquidcrystal_i2c_shiftDecrement(LiquidCrystal_I2C* lcd) {
+//   if (lcd == nullptr) return;
+//   return lcd->shiftDecrement();
+// }
 
 void mgos_liquidcrystal_i2c_leftToRight(LiquidCrystal_I2C* lcd) {
   if (lcd == nullptr) return;
