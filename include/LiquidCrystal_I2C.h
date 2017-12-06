@@ -7,6 +7,11 @@
 #include <Wire.h>
 #include <binary.h>
 
+// ESP32 workaround (there is a macro called "send" that ruins everything)
+#ifdef send
+#undef send
+#endif //send
+
 // commands
 #define LCD_CLEARDISPLAY 0x01
 #define LCD_RETURNHOME 0x02
